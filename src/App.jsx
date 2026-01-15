@@ -11,7 +11,7 @@ import Login from './components/Login';
 import useAuth from './Hook/useAuth';
 
 export default function App() {
-  const { isAUth, login, logout, isAdmin } = useAuth();
+  const { isAuth, login, logout, isAdmin } = useAuth();
   const [isShow, setShow] = useState(false) 
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export default function App() {
   return ( 
     <Router>
       {isShow ? (
-        isAUth ? ( 
+        isAuth ? ( 
           isAdmin ? <Admin /> : (
         <>
           <Head />

@@ -1,5 +1,42 @@
 {
-  "watches": [],
+  "watches": [
+    {
+      "id": 1,
+      "name": "Rolex Submariner",
+      "description": "Luxury diving watch with timeless design and exceptional durability.",
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+    },
+    {
+      "id": 2,
+      "name": "Omega Speedmaster",
+      "description": "Iconic chronograph known as the Moonwatch, worn by astronauts.",
+      "image": "https://images.unsplash.com/photo-1600180758895-8a5d2c8a91f5"
+    },
+    {
+      "id": 3,
+      "name": "Tag Heuer Carrera",
+      "description": "Sporty luxury watch inspired by professional racing heritage.",
+      "image": "https://images.unsplash.com/photo-1612817159949-195b6eb9e31a"
+    },
+    {
+      "id": 4,
+      "name": "Patek Philippe Nautilus",
+      "description": "Elegant and exclusive luxury watch with a legendary design.",
+      "image": "https://images.unsplash.com/photo-1518544887873-a8d85e86c38c"
+    },
+    {
+      "id": 5,
+      "name": "Audemars Piguet Royal Oak",
+      "description": "High-end luxury sports watch with a bold octagonal bezel.",
+      "image": "https://images.unsplash.com/photo-1622434641406-a158123450f9"
+    },
+    {
+      "id": 6,
+      "name": "Casio G-Shock",
+      "description": "Shock-resistant digital watch built for extreme conditions.",
+      "image": "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6"
+    }
+  ],
   "users": [
     {
       "id": "1",
@@ -9,7 +46,7 @@
       "role": "user"
     },
     {
-      "id": "1",
+      "id": "2",
       "username": "admin",
       "email": "admin@gmail.com",
       "password": "password123",
