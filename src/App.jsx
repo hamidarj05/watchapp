@@ -1,15 +1,18 @@
 import './App.css';
 import Head from './components/Head';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import WatchList from './components/WatcheListe';
-import ShoppingCard from './components/ShoppingCard';
-import Navbar from './components/Navbar';
-import Slide from './components/Slide'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 import Loading from './components/Loader'
-import { useEffect, useState } from 'react'; 
+import { useEffect, useState } from 'react';  
+import Home from './Pages/Home';  
+import WatchList from './Pages/WatcheListe';
+import ShoppingCard from './Pages/ShoppingCard';
+import Admin from './Pages/Admin';
+import Login from './components/Login';
+import useAuth from './Hook/useAuth';
 
 export default function App() {
-  const [isShow, setShow] = useState(false)
+  const { isAUth, login, logout, isAdmin } = useAuth();
+  const [isShow, setShow] = useState(false) 
 
   useEffect(() => {
     setTimeout(() => {
@@ -19,16 +22,21 @@ export default function App() {
   return ( 
     <Router>
       {isShow ? (
+        isAUth ? ( 
+          isAdmin ? <Admin /> : (
         <>
           <Head />
-          <Navbar />
-          <Slide />
-          <ShoppingCard />
+          <Home logout = {logout} />
           <Routes>
             <Route path="/watchListe" element={<WatchList />} />
+            
             <Route path="/ShoppingCard" element={<ShoppingCard />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
-        </>
+        </> )
+        ) : (
+          <Login login = {login} />
+        )
       ) : (
         <Loading />
       )}

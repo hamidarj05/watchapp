@@ -1,7 +1,12 @@
 import logo from '../Assets/Images/logo.png'
 import { Link } from 'react-router-dom'
 
-function Navbar() {
+function Navbar({logout}) {
+    const deconnecter = () => {
+        localStorage.removeItem("isLogin");
+        window.location.reload();
+        logout();
+    }
     return (
         <nav className="w-full bg-white shadow-md">
             <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"> 
@@ -18,6 +23,7 @@ function Navbar() {
                     <Link to="/men" className="hover:text-blue-600 transition">Men</Link>
                     <Link to="/accessories" className="hover:text-blue-600 transition">Accessories</Link>
                     <Link to="/contact" className="hover:text-blue-600 transition">Contact</Link>
+                    <button onClick={deconnecter} className="hover:text-blue-600 transition">Deconnecter</button>
                 </div>
 
                 {/* Mobile button */}
